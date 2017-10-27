@@ -31,10 +31,49 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
+  // trang home
+  'GET /': 'HomeController.index',
 
-  '/': {
-    view: 'homepage'
-  }
+
+
+
+  // Authentication
+  '/logout': 'AuthController.logout',
+
+  '/login/facebook':'AuthController.facebook',
+
+  '/login/facebook/callback':'AuthController.facebook',
+
+  '/login/google':'AuthController.google',
+
+  '/login/google/callback':'AuthController.google',
+
+  'POST /student/login/local': 'AuthController.studentLocal',
+
+  'POST /teacher/login/local': 'AuthController.teacherLocal',
+
+  'POST /admin/login/local': 'AuthController.adminLocal',
+
+
+            // authen student
+
+  'POST /student/register': 'StudentController.registerStudent',
+
+  '/student/verify':'StudentController.verifyStudent',
+
+  'POST /student/myprofile': 'StudentController.myprofile',
+
+  'POST /student/edit': 'StudentController.edit',
+
+  ///TEACHER
+
+  'GET /teacher/login': 'HomeController.loginTeacher',
+
+  'GET /teacher/register': 'HomeController.registerTeacher',
+
+  'POST /teacher/register': 'TeacherController.registerTeacher',
+
+  '/teacher/verify':'TeacherController.verifyTeacher',
 
   /***************************************************************************
   *                                                                          *
